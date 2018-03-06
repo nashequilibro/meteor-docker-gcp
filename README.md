@@ -21,7 +21,18 @@ which should make your nodejs server available at http://localhost:3000. To stop
 ## For deployment on GCP (Kubernetes)
 
 I used the tutorial on https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app to create a Kubernetes cluster on Google Cloud. The build process works as before, just use something like gcr.io/${PROJECT_ID}/app-name:v1 for your images.
-Push your image to container registry with `gcloud docker -- push gcr.io/${PROJECT_ID}/app-name:v1`.
-From there you can `kubectl run my-app --image=gcr.io/${PROJECT_ID}/app-name:v1 --port 3000` and then `kubectl expose deployment my-app --type=LoadBalancer --port 80 --target-port 3000` to make it accessible over http. Find the external ip with `kubectl get service`.
+Push your image to container registry with
+
+`gcloud docker -- push gcr.io/${PROJECT_ID}/app-name:v1`
+
+From there you can
+
+`kubectl run my-app --image=gcr.io/${PROJECT_ID}/app-name:v1 --port 3000`
+
+and then
+
+`kubectl expose deployment my-app --type=LoadBalancer --port 80 --target-port 3000`
+
+to make it accessible over http. Find the external ip with `kubectl get service`.
 
 For configuration and SSL and load balancing etc etc please refer to the Google Cloud Docs.
