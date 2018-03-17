@@ -1,0 +1,12 @@
+runtime: custom
+env: flex
+threadsafe: true
+automatic_scaling:
+  max_num_instances: 1
+skip_files:
+- ^(.*/)?\.dockerignore$
+- ^(.*/)?\npm-debug.log$
+- ^(.*/)?\yarn-error.log$
+- ^(.*/)?\.git$
+- ^(.*/)?\.hg$
+- ^(.*/)?\.svn$

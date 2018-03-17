@@ -68,4 +68,27 @@ and then
 
 to make it accessible over http. Find the external ip with `kubectl get service`.
 
-For configuration and SSL and load balancing etc etc please refer to the Google Cloud Docs.
+For configuration and SSL and load balancing etc etc please refer to the Google Cloud Docs, but i have to warn you: It is not going to be quick and easy. I gave up after a couple of days.
+
+## Deployment on Google App Engine
+
+add the app.yaml in addition to the Dockerfile
+
+```
+runtime: custom
+env: flex
+threadsafe: true
+automatic_scaling:
+  max_num_instances: 1
+skip_files:
+- ^(.*/)?\.dockerignore$
+- ^(.*/)?\npm-debug.log$
+- ^(.*/)?\yarn-error.log$
+- ^(.*/)?\.git$
+- ^(.*/)?\.hg$
+- ^(.*/)?\.svn$
+```
+
+and just run
+
+`gcloud app deploy`
