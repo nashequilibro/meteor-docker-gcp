@@ -6,6 +6,8 @@ This works from you App directory with Meteor 1.6.1 and Docker 18.03.0 but shoul
 
 `meteor build ../meteorbuilds/app --directory --architecture os.linux.x86_64`
 
+Run as admin on Windows to prevent symlink error.
+
 Now copy the Dockerfile
 
 ```
@@ -72,6 +74,7 @@ For configuration and SSL and load balancing etc etc please refer to the Google 
 
 ## Deployment on Google App Engine
 
+delte the node_modules folder from bundle/programs/server/npm/
 add the app.yaml in addition to the Dockerfile
 
 ```
