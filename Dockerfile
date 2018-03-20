@@ -24,5 +24,5 @@ ENV PORT=3000
 # Your Meteor Settings
 ENV METEOR_SETTINGS='{"public": {}, "private": {}}'
 
-# Run app.py when the container launches
+# Run app when the container launches
 CMD ["node", "main.js"]
