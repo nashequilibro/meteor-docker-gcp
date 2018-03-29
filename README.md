@@ -74,8 +74,7 @@ For configuration and SSL and load balancing etc etc please refer to the Google 
 
 ## Deployment on Google App Engine
 
-delte the node_modules folder from bundle/programs/server/npm/
-add the app.yaml in addition to the Dockerfile
+add the following app.yaml in addition to the Dockerfile
 
 ```
 runtime: custom
@@ -92,6 +91,6 @@ skip_files:
 - ^(.*/)?\.svn$
 ```
 
-and just run
+and run
 
 `gcloud app deploy`
